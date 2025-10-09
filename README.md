@@ -1,6 +1,12 @@
 # 3D Text Animation using only CSS and JavaScript
 
-_A description of the demo goes here._
+A collection of creative 3D text scroll animations built with CSS and JavaScript. This demo showcases three distinct effects:
+
+1. **Cylindrical Text Rotation** - Text arranged in a cylindrical formation that rotates as you scroll
+2. **Double Circular Animation** - Text positioned in two circular arrangements with dynamic scroll-based movement
+3. **[Third Effect]** - Additional 3D text animation variant
+
+The animations are triggered by scroll position and create an immersive 3D experience using CSS transforms and custom JavaScript scroll handlers. Each demo demonstrates different approaches to creating engaging typographic animations for modern web experiences.
 
 ![Image Title](https://generative-placeholders.glitch.me/image?width=800&height=600")
 
