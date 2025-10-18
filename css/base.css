@@ -6,16 +6,14 @@
 
 :root {
   --color-text: #fff;
+  --color-text-alt: rgba(255, 255, 255, 0.7);
   --color-bg: #000;
   --color-link: #fff;
   --color-link-hover: #fff;
   --page-padding: 1.5rem;
   --section-padding: 3.2rem;
-  font-family: 'Inter', ui-monospace, monospace;
-  font-size: 14px;
-  letter-spacing: -0.05em;
-  line-height: 1.1;
-  font-weight: 500;
+  font-family: 'area-normal', sans-serif;
+  font-size: 12px;
 }
 
 body {
@@ -29,11 +27,6 @@ body {
   overflow-x: hidden;
   overscroll-behavior: none;
   height: 100%;
-  /* font-size: 1.2rem;
-  letter-spacing: -0.05em;
-  line-height: 1.1;
-  font-weight: 500; */
-
   word-break: break-all;
 
   @media screen and (max-width: 768px) {
@@ -41,84 +34,18 @@ body {
   }
 }
 
-/* LENIS */
-
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: clip;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
-}
-
-@media (scripting: enabled) {
-  .loading {
-    &::before,
-    &::after {
-      content: '';
-      position: fixed;
-      z-index: 10000;
-    }
-
-    &::before {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--color-bg);
-    }
-
-    &::after {
-      top: 50%;
-      left: 50%;
-      width: 100px;
-      height: 1px;
-      margin: 0 0 0 -50px;
-      background: var(--color-link);
-      animation: loaderAnim 1.5s ease-in-out infinite alternate forwards;
-    }
-  }
-}
-
-@keyframes loaderAnim {
-  0% {
-    transform: scaleX(0);
-    transform-origin: 0% 50%;
-  }
-
-  50% {
-    transform: scaleX(1);
-    transform-origin: 0% 50%;
-  }
-
-  50.1% {
-    transform: scaleX(1);
-    transform-origin: 100% 50%;
-  }
-
-  100% {
-    transform: scaleX(0);
-    transform-origin: 100% 50%;
-  }
+.demo-1 {
+  --color-bg: #d04607;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--color-link);
   outline: none;
   cursor: pointer;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--color-link-hover);
   }
 
@@ -138,23 +65,22 @@ a {
 }
 
 .frame {
+  font-weight: 500;
   padding: 3rem var(--page-padding) 0;
   display: grid;
   z-index: 1000;
   position: relative;
-  grid-row-gap: 1rem;
-  grid-column-gap: 2rem;
+  gap: 1rem;
   pointer-events: none;
   justify-items: start;
-  grid-template-columns: auto auto;
+  justify-content: start;
+  grid-template-columns: auto auto auto;
   grid-template-areas:
-    'title'
-    'back'
-    'archive'
-    'github'
-    'demos'
-    'tags'
-    'sponsor';
+    'title title title'
+    'back archive github'
+    'demos demos demos'
+    'tags tags tags'
+    'sponsor sponsor sponsor';
 
   #cdawrap {
     justify-self: start;
@@ -253,12 +179,12 @@ a {
 
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 3vh;
   justify-content: center;
   align-items: center;
 
   & h1 {
-    font-size: clamp(2rem, 5vw, 5rem);
+    font-size: clamp(2rem, 5vw, 4rem);
     text-align: center;
     word-break: break-word;
     font-weight: 600;
@@ -268,6 +194,7 @@ a {
     text-align: center;
     word-break: break-word;
     font-weight: 400;
+    color: var(--color-text-alt);
   }
 }
 

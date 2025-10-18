@@ -8,10 +8,6 @@
   position: absolute;
   width: 100vw;
   height: 100%;
-  font-size: 3rem;
-  font-weight: 600;
-  text-transform: uppercase;
-
   left: 30%;
   transform: translateX(-100%);
 
@@ -28,9 +24,6 @@
   position: absolute;
   width: 100vw;
   height: 100%;
-  font-size: 3rem;
-  font-weight: 600;
-  text-transform: uppercase;
   left: 70%;
   text-align: right;
 
@@ -46,6 +39,10 @@
 .circle__text__left__item,
 .circle__text__right__item {
   position: absolute;
+  font-family: 'bc-ludva', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 5vw, 6rem);
+  text-transform: uppercase;
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);

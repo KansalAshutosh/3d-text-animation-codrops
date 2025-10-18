@@ -1,27 +1,22 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-export class Cylindar {
+export class Cylinder {
   title: HTMLElement;
   textWrapper: HTMLElement;
   textItems: NodeListOf<HTMLElement>;
   wrapper: HTMLElement;
 
   constructor() {
-    this.title = document.querySelector(".cylinder__title") as HTMLElement;
-    this.textWrapper = document.querySelector(
-      ".cylinder__text__wrapper"
-    ) as HTMLElement;
-    this.textItems = document.querySelectorAll(
-      ".cylinder__text__item"
-    ) as NodeListOf<HTMLElement>;
-    this.wrapper = document.querySelector(".cylinder__wrapper") as HTMLElement;
+    this.title = document.querySelector('.cylinder__title') as HTMLElement;
+    this.textWrapper = document.querySelector('.cylinder__text__wrapper') as HTMLElement;
+    this.textItems = document.querySelectorAll('.cylinder__text__item') as NodeListOf<HTMLElement>;
+    this.wrapper = document.querySelector('.cylinder__wrapper') as HTMLElement;
     this.init();
   }
 
   init(): void {
     if (!this.title || !this.textWrapper) return;
-    console.log("ICI");
     this.calculatePositions();
     this.createScrollTrigger();
   }
@@ -46,15 +41,11 @@ export class Cylindar {
   createScrollTrigger(): void {
     ScrollTrigger.create({
       trigger: this.title,
-      start: "center center",
-      end: "+=2000svh",
+      start: 'center center',
+      end: '+=2000svh',
       pin: this.wrapper,
       scrub: 2,
-      animation: gsap.fromTo(
-        this.textWrapper,
-        { rotateX: -80 },
-        { rotateX: 270, ease: "none" }
-      ),
+      animation: gsap.fromTo(this.textWrapper, { rotateX: -80 }, { rotateX: 270, ease: 'none' }),
     });
   }
 

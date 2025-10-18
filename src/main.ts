@@ -6,13 +6,13 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
-import { Cylindar } from './cylinder/cylinder';
+import { Cylinder } from './cylinder/cylinder';
 import { Circle } from './circle/circle';
 import { Tube } from './tube/tube';
 
 class App {
   smoother!: ScrollSmoother;
-  cylindar!: Cylindar;
+  cylinder!: Cylinder;
   circle!: Circle;
   tube!: Tube;
 
@@ -36,7 +36,7 @@ class App {
   }
 
   initAllEffects(): void {
-    this.cylinder = new Cylindar();
+    this.cylinder = new Cylinder();
     this.circle = new Circle();
     this.tube = new Tube();
   }
